@@ -1,4 +1,4 @@
-import random
+import random, time
 from graph import Graph
 
 number = 1
@@ -13,8 +13,18 @@ def generate_graph():
         print("g.addEdge(" + str(i) + "," + str(k)+")")
         g.addEdge(k,i)
         g.addEdge(i,k)
+    start = time.time()
     print(g.BFS(0))
+    end = time.time()
+    diff = float(end - start)
+    diff = diff * 1000
+    print(diff)
+    start = time.time()
     print(g.DFS(0))
+    end = time.time()
+    diff = float(end - start)
+    diff = diff * 1000
+    print(diff)
     
 while(number):
     print("Escolha uma das opções:\n"
